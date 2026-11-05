@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ficha Técnica de Produto</title>
+<style>
+body{margin:0;background:#e9e9e9;color:#111;font:14px/1.4 Arial,Helvetica,sans-serif}
+.bar{display:flex;gap:8px;justify-content:flex-end;max-width:860px;margin:12px auto 0;padding:0 12px}
+.bar a,.bar button{font:inherit;padding:6px 16px;border:1px solid #222;background:#fff;color:#111;border-radius:4px;cursor:pointer;text-decoration:none}
+.page{max-width:860px;margin:12px auto;background:#fff;padding:24px;border:1px solid #222}
+.sc{overflow-x:auto;margin-bottom:10px}
+table{border-collapse:collapse;width:100%}
+th,td{border:1px solid #222;padding:6px 8px;text-align:center}
+th{background:#d9d9d9}
+td.l{text-align:left}
+.head{display:grid;grid-template-columns:150px 1fr 150px;border:1px solid #222;margin-bottom:14px}
+.head>div{padding:10px;display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column}
+.head>div+div{border-left:1px solid #222}
+h2{font-size:14px;margin:18px 0 8px;text-transform:uppercase}
+.ph{border:1px dashed #222;color:#555;text-align:center;padding:40px 10px;margin:10px 0}
+p{margin:6px 0}
+#msg{max-width:860px;margin:12px auto;padding:0 12px;color:#555}
+#busca input{width:100%;padding:8px;font:inherit;border:1px solid #222;box-sizing:border-box}
+#res{list-style:none;padding:0;margin:8px 0}
+#res li{padding:6px 0;border-bottom:1px solid #ccc}
+#res a{color:#111}
+@media(max-width:560px){.head{grid-template-columns:1fr}.head>div+div{border-left:0;border-top:1px solid #222}.page{padding:12px}}
+@media print{body{background:#fff}.bar,#msg{display:none}.page{border:0;margin:0;max-width:none;padding:0}}
+</style>
+</head>
+<body>
+<div class="bar"><a id="voltar" href="./" hidden>Outro produto</a><button type="button" onclick="print()">Imprimir</button></div>
+<div id="msg">Carregando…</div>
+
+<main class="page" id="busca" hidden>
+  <h2>Escolha o produto</h2>
+  <input id="q" type="search" placeholder="Digite o código ou parte do nome" autocomplete="off">
+  <ul id="res"></ul>
+</main>
+
+<main class="page" id="ficha" hidden>
+<div class="head">
+  <div>Logo Cedral</div>
+  <div><b>CONTROLE DE QUALIDADE</b><b>FICHA TÉCNICA DE PRODUTO</b></div>
+  <div>Código: <b id="cod">-</b></div>
+</div>
+
+<h2>1. Identificação do produto:</h2>
+<div class="sc"><table><tr><th>Código</th><th>Produto</th><th>Validade</th></tr>
+<tr><td id="cod2">-</td><td id="prod">-</td><td>03 anos</td></tr></table></div>
+<div class="sc"><table><tr><th>EAN 13</th><th>Numero de Processo ANVISA</th><th>NCM</th></tr>
+<tr><td id="ean">-</td><td id="anvisa">-</td><td id="ncm">-</td></tr></table></div>
+<div class="ph">[Espaço reservado para imagem do produto]</div>
+
+<h2>2. Especificações físico químico</h2>
+<div class="sc"><table><tr><th>PARÂMETROS</th><th>ESPECIFICAÇÕES</th></tr>
+<tr><td class="l">Aspecto</td><td id="aspecto">-</td></tr>
+<tr><td class="l">Cor</td><td id="cor">-</td></tr>
+<tr><td class="l">Odor</td><td id="odor">-</td></tr>
+<tr><td class="l">pH a 25°C</td><td id="ph">-</td></tr>
+<tr><td class="l">Viscosidade a 25°C (+/- 2°C) - (cps)</td><td id="visc">-</td></tr>
+<tr><td class="l">Densidade a 25°C - (g/ml)</td><td id="dens">-</td></tr></table></div>
+<p><b>OBS.:</b> Caso o viscosímetro não seja do mesmo modelo indicado acima, pode-se utilizar o spindle 4 e a velocidade de 12rpm, para todos os produtos</p>
+
+<h2>3. Envase</h2>
+<div class="sc"><table><thead><tr><th>CÓDIGO</th><th>DESCRIÇÃO</th></tr></thead><tbody id="envase"></tbody></table></div>
+
+<h2>4. Tolerância de peso</h2>
+<p>A tolerância dos produtos deve respeitar o percentual <b>+/- 3%</b> da volumetria do produto.</p>
+
+<h2>5. Amostras de retenção</h2>
+<p>Realizar a retirada de <b>03 amostras de retenção</b> a cada <b>1000 unidades produzidas por lote</b> (ou seja, se a produção for de rendimento de 3 mil peças deverá ser enviado <b>09 amostras de retenção</b>). Não exceder máximo de <b>15 amostras de retenção</b>.</p>
+<p><b>OBS.:</b> Caso a arte não conste o <b>N° de Processo</b> o mesmo devera ser impresso com a inkjet junto ao lote.</p>
+<p><b>OBS1.:</b> Para produções menores de 1000 unidades realizar a retirada de 03 amostras de retenção.</p>
+<p><b>OBS2.:</b> As amostras de retenção devem seguir com nota fiscais e/ou serem discriminadas na nota fiscal que segue junto a carga.</p>
+<p><b>OBS3:</b> Em caso de Kit considerar as amostras de retenção separadamente.</p>
+<p><b>OBS4:</b> A etiqueta do kit deve estar disposta de forma que cumbra os códigos de barras das embalagens individuais. Conforme imagem acima</p>
+<p><b>OBS5:</b> A descrição de volumetria dos itens do kit devem seguir os padrões do InMetro, por exemplo mililitro deve ser escrito em letras minúsculas "ml" e litro em letra maiúscula "L" .</p>
+
+<h2>6. Dimensionamento da caixa e paletização</h2>
+<p>• Caixa com <b id="qcx">-</b> unidades:</p>
+<div class="sc"><table><tr><th>Código</th><th>Descrição</th><th>Dun</th></tr>
+<tr><td id="cxcod">-</td><td id="cxdesc">-</td><td>-</td></tr></table></div>
+<div class="sc"><table><tr><th colspan="3">Caixa (medidas externas)</th></tr><tr><th>Altura</th><th>Largura</th><th>Comprimento</th></tr>
+<tr><td id="alt">-</td><td id="larg">-</td><td id="comp">-</td></tr></table></div>
+<div class="sc"><table><tr><th colspan="3">Paletização</th></tr><tr><th>Lastro</th><th>Camadas</th><th>Total de caixas</th></tr>
+<tr><td id="last">-</td><td id="cam">-</td><td id="tot">-</td></tr></table></div>
+<p>* Modelo de etiqueta de embarque</p><div class="ph">[Imagem da etiqueta de embarque]</div>
+<p>* Modelo de amarração no palete</p><div class="ph">[Imagem da paletização]</div>
+
+<h2>7. Histórico das revisões</h2>
+<div class="sc"><table><tr><th>N° Revisão</th><th>Data</th><th>Motivo</th></tr><tr><td>-</td><td>-</td><td>-</td></tr></table></div>
+</main>
+
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const set = (id, v) => { $(id).textContent = (v === undefined || v === null || v === "") ? "-" : v; };
+
+async function api(p) {
+  const r = await fetch("/api/ficha?" + p);
+  let j; try { j = await r.json(); } catch (_) { throw new Error("A função /api/ficha não respondeu (HTTP " + r.status + ")."); }
+  if (!r.ok) throw new Error(j.erro || "Erro " + r.status);
+  return j;
+}
+
+function mostrar(f) {
+  set("cod", f.cod); set("cod2", f.cod); set("prod", f.prod); set("anvisa", f.anvisa);
+  set("aspecto", f.aspecto); set("cor", f.cor); set("odor", f.odor);
+  set("ph", f.ph); set("visc", f.visc); set("dens", f.dens);
+  $("envase").innerHTML = f.envase.length
+    ? f.envase.map(i => `<tr><td>${esc(i.cod)}</td><td class="l">${esc(i.desc)}</td></tr>`).join("")
+    : "<tr><td>-</td><td>-</td></tr>";
+  set("qcx", f.qcx); set("cxcod", f.cxcod); set("cxdesc", f.cxdesc);
+  set("alt", f.alt); set("larg", f.larg); set("comp", f.comp);
+  set("last", f.last); set("cam", f.cam); set("tot", f.tot);
+  document.title = "Ficha Técnica - " + (f.prod || f.cod);
+  if (f.semEspec) { $("msg").textContent = "Atenção: especificações físico-químicas não encontradas na planilha para este produto."; $("msg").hidden = false; }
+  else $("msg").hidden = true;
+  $("ficha").hidden = false; $("voltar").hidden = false;
+}
+
+function busca() {
+  const q = $("q"), res = $("res"); let timer;
+  const listar = async () => {
+    try {
+      const r = await api("q=" + encodeURIComponent(q.value));
+      res.innerHTML = r.map(o => `<li><a href="?codigo=${esc(o.cod)}">${esc(o.cod)} – ${esc(o.desc)}</a></li>`).join("") || "<li>Nenhum produto encontrado.</li>";
+    } catch (e) { res.innerHTML = `<li>${esc(e.message)}</li>`; }
+  };
+  q.oninput = () => { clearTimeout(timer); timer = setTimeout(listar, 250); };
+  q.onkeydown = e => { const c = q.value.replace(/\D/g, ""); if (e.key == "Enter" && c.length >= 5) location.search = "?codigo=" + c; };
+  $("busca").hidden = false; $("msg").hidden = true; listar();
+}
+
+(async () => {
+  const cod = (new URLSearchParams(location.search).get("codigo") || "").replace(/\D/g, "");
+  if (!cod) return busca();
+  try { mostrar(await api("codigo=" + cod)); }
+  catch (e) { $("msg").textContent = e.message; busca(); $("msg").hidden = false; }
+})();
+</script>
+</body>
+</html>
